@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// definition shema de telephone
+// definition shema de Telephone
 
 const telephoneSchema = mongoose.Schema({
 	nTelephone:{
@@ -11,19 +11,16 @@ const telephoneSchema = mongoose.Schema({
 		type: String,
         required: true
 	}
-	
-	
-	
-	
 });
 
 // pour rendre Telephone accessible de n'importe ou ailleurs
 const Telephone = module.exports = mongoose.model('Telephone', telephoneSchema);
 
-// get Telephone
+// get Telephones
 module.exports.getTelephones = function(callback, limit){
 	Telephone.find(callback).limit(limit);
 }
+
 
 // Get Telephone
 module.exports.getTelephoneById = (id, callback) => {
